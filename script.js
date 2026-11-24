@@ -19,13 +19,13 @@ for(let i = 2; i > 0; i--) {
     let option = `<option value="${ampm}">${ampm}</option>`;
     selectMenu[2].firstElementChild.insertAdjacentHTML("afterend", option);
 }
-zsetInterval(() => {
+setInterval(() => {
     let date = new Date();
     let h = date.getHours();
     let m = date.getMinutes();
     let s = date.getSeconds();
     let ampm = "AM";
-    if(h >= 12) {
+    if(h >= 12){
         h = h - 12;
         ampm = "PM";
     }
@@ -37,7 +37,7 @@ zsetInterval(() => {
 },1000)
 function setAlarm() {
     let time = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}`;
-    if(time.includes("hour") || time.includes("minute") || time.includes("AM/PM")) {
+    if(time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")) {
         alert("Please, select a valid time to set Alarm!");
     }
     content.classList.add("disable");
