@@ -10,12 +10,12 @@ body,.wrapper,.content{
 }
 body{
     min-height: 100vh;
-    background: #4f6074;
+    background: #33475e;
 }
 .wrapper{
     width: 440px;
     padding: 30px 30px 38px;
-    background: #831515;
+    background: #33188d;
     border-radius: 10px;
     flex-direction: column;
 }
@@ -34,7 +34,7 @@ body{
 .content .column{
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #7c4040;
+    border: 1px solid #ffdada;
     width: calc(100%/3 - 5px);
 }
 .column select {
@@ -49,11 +49,11 @@ body{
     width: 100%;
     border: none;
     outline: none;
-    color: #fff;
+    color: #3f0909;
     cursor: pointer;
     font-size: 20px;
     padding: 17px 0;
     margin-top: 20px;
     border-radius: 5px;
-    background: #e66868;
+    background: #e09999af;
 }
