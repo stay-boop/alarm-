@@ -3,6 +3,8 @@ const content = document.querySelector(".content");
 const selectMenu = document.querySelectorAll("select");
 const setAlarmBtn = document.querySelector("button");
 
+let alarmTime;
+const ringTone = new Audio("rick-roll_B9ZrDk1.mp3"); 
 for (let i = 12; i > 0; i--) {
         i = i < 10 ? "0" + i : i;
         let option = `<option value="${i}">${i}</option>`;
@@ -34,12 +36,18 @@ setInterval(() => {
      m = m < 10 ? "0" + m : m;
      s = s < 10 ? "0" + s : s;
      currentTime.innerText = `${h}:${m}:${s} ${ampm}`;
+     if(alarmTime == `${h}:${m} ${ampm}`) {
+        ringTone.play();
+        ringTone.loop = true;
+     }
+
 },1000)
 function setAlarm() {
     let time = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}`;
     if(time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")) {
         alert("Please, select a valid time to set Alarm!");
     }
-    content.classList.add("disable");
+    alarmTime = time;
+    content.classList.add("disable")
 }
 setAlarmBtn.addEventListener("click", setAlarm);
